@@ -1,0 +1,125 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ian Tsang, CSULB, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\iants\OneDrive\Desktop\346 stuff\CECS 346 Project 2\CECS 346 project 2.uvprojx
+Project File Date:  10/26/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.c(1): warning: // comments are not allowed in this language [-Wcomment]
+// DragRaceStarter.c
+^
+main.c(156): warning: no previous extern declaration for non-static variable 'DragRace_FSM' [-Wmissing-variable-declarations]
+STyp DragRace_FSM[11] = {
+     ^
+main.c(156): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+STyp DragRace_FSM[11] = {
+^
+main.c(202): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint32_t        Half_Sec = 3999999;
+                        ^
+main.c(249): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        GPIO_PORTD_PCTL_R &= ~0x0000000F;       //PD as GPIO
+                          ~~ ^~~~~~~~~~~
+main.c(250): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        GPIO_PORTD_AMSEL_R &= ~0x01;            //disable analog on PF0
+                           ~~ ^~~~~
+main.c(251): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        GPIO_PORTD_IS_R &= ~0x07;                       // PD0,1 are edge sensitive
+                        ~~ ^~~~~
+main.c(252): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        GPIO_PORTD_IBE_R &= ~0x0F;                      //PD0,1 not both edges
+                         ~~ ^~~~~
+main.c(253): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        GPIO_PORTD_IEV_R &= ~0x07;              //PD0, 1 is a falling edge event
+                         ~~ ^~~~~
+main.c(273): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                GPIO_PORTA_AMSEL_R &= ~0x04;
+                                   ~~ ^~~~~
+main.c(274): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                GPIO_PORTA_DIR_R &= ~0x04;
+                                 ~~ ^~~~~
+main.c(276): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                GPIO_PORTA_PCTL_R &= ~0x00000F00;  //PortA 2
+                                  ~~ ^~~~~~~~~~~
+main.c(279): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                GPIO_PORTA_AFSEL_R &= ~0x04;
+                                   ~~ ^~~~~
+main.c(281): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                GPIO_PORTA_IS_R &= ~0x04; //edge sensitive
+                                ~~ ^~~~~
+main.c(282): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                GPIO_PORTA_IBE_R &= ~0x04; // not on both edges
+                                 ~~ ^~~~~
+main.c(327): warning: implicit conversion loses integer precision: 'volatile unsigned long' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        Input = SENSORS;
+              ~ ^~~~~~~
+main.c(118): note: expanded from macro 'SENSORS'
+#define SENSORS                                                                 (*((volatile unsigned long *) 0x4000700C)) // bit addresses for  2 sensors on PD0,1 
+                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(194): warning: no previous extern declaration for non-static variable 'State_Index' [-Wmissing-variable-declarations]
+uint8_t State_Index;  // current state index
+        ^
+main.c(194): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t State_Index;  // current state index
+^
+main.c(195): warning: no previous extern declaration for non-static variable 'timesup' [-Wmissing-variable-declarations]
+uint8_t timesup;
+        ^
+main.c(195): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t timesup;
+^
+main.c(196): warning: no previous extern declaration for non-static variable 'Input' [-Wmissing-variable-declarations]
+uint8_t Input;
+        ^
+main.c(196): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t Input;
+^
+main.c(197): warning: no previous extern declaration for non-static variable 'reset' [-Wmissing-variable-declarations]
+uint8_t reset;  // flag to reset the system, set by the reset button located at breadboard, not the launchpad reset button.
+        ^
+main.c(197): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t reset;  // flag to reset the system, set by the reset button located at breadboard, not the launchpad reset button.
+^
+19 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=1714 RO-data=82 RW-data=0 ZI-data=1128  
+".\Objects\CECS 346 project 2.axf" - 0 Error(s), 19 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil.TM4C_DFP.1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+
+<h2>Collection of Component include folders:</h2>
+  C:/Users/iants/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
